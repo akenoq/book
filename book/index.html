@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Book" />
+
+    <title>Tizen Mobile Web Basic Application</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div id="main" class="page">
+            <button onclick="writeTestFile()">WRITE</button>
+            <button onclick="readTestFile()">READ</button>
+            <br>
+            <br>
+            <button onclick="readBookFile('book.fb2')">READ BOOK</button>
+            <div id="book_cont"></div>
+            
+            <div id="book_err"></div>
+    </div>
+</body>
+
+</html>
