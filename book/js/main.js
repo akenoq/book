@@ -33,6 +33,22 @@ function readTestFile(){
 	console.log("OK R");
 }
 
+function myXml(){
+
+    var text = document.getElementById("book_cont");
+    parser = new DOMParser();
+    xmlDoc = parser.parseFromString(text,"text/xml");
+    
+    auth = xmlDoc.getElementsByTagName("author");
+    if(auth) {
+    document.getElementById("auth").innerHTML = xmlDoc.getElementsByTagName("author")[0].childNodes[0].nodeValue + xmlDoc.getElementsByTagName("author")[0].childNodes[1].nodeValue + xmlDoc.getElementsByTagName("author")[0].childNodes[3].nodeValue;
+    }
+    else {
+    	document.getElementById("auth").innerHTML = "ERR";
+    }
+    
+}
+
 function readBookFile(path){
 	tizen.filesystem.resolve("documents", function(dir) 
 	    {
@@ -51,5 +67,7 @@ function readBookFile(path){
 	            	book.innerHTML = e.message;
 	            }, "UTF-8");
 	    });
-	console.log("OK R");
+	console.log("OK BOOK");
+	myXml();
 }
+
