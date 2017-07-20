@@ -34,18 +34,27 @@ function readTestFile(){
 }
 
 function myXml(){
+	document.getElementById("auth").innerHTML = "HELLO2";
 
     var text = document.getElementById("book_cont");
     parser = new DOMParser();
     xmlDoc = parser.parseFromString(text,"text/xml");
     
+
+    
     auth = xmlDoc.getElementsByTagName("author");
+    
+	document.getElementById("auth").innerHTML = auth.nodeValue;
+
+    
     if(auth) {
     document.getElementById("auth").innerHTML = xmlDoc.getElementsByTagName("author")[0].childNodes[0].nodeValue + xmlDoc.getElementsByTagName("author")[0].childNodes[1].nodeValue + xmlDoc.getElementsByTagName("author")[0].childNodes[3].nodeValue;
     }
     else {
     	document.getElementById("auth").innerHTML = "ERR";
     }
+    
+	document.getElementById("auth").innerHTML = "HELLO2";
     
 }
 
@@ -68,6 +77,7 @@ function readBookFile(path){
 	            }, "UTF-8");
 	    });
 	console.log("OK BOOK");
+	document.getElementById("auth").innerHTML = "HELLO";
 	myXml();
 }
 
